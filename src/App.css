@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #500f86;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  width: 600px;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    h2 {
+      font-size: 35px;
+    }
+    span {
+      font-size: 18px;
+    }
+  }
+  form {
+    background-color: #500f86;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      border: 1px solid #500f86;
+      &:focus {
+        outline: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    }
+    button {
+      width: 50%;
+      cursor: pointer;
+      background-color: white;
+      color: #500f86;
+      border: none;
+      font-size: 18px;
+    }
+  }
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  --b: 8px; 
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%,#f03355) content-box;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+          mask-composite: intersect;
+  animation:l4 1s infinite steps(10);
+}
+@keyframes l4 {to{transform: rotate(1turn)}}
